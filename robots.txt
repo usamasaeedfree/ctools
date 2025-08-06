@@ -1,0 +1,4 @@
+User-Agent:*
+Disallow:
+
+sitemap: https://ctool.fun/sitemap.xml
