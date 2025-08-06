@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ctool.fun/sitemap.xml
+
