@@ -23,54 +23,90 @@
     <link rel="stylesheet" href="/src/style.css">
 
 
-    <title>UAF CGPA Calculator For All Students</title>
-    <meta property="og:title" content="UAF CGPA Calculator For All Students">
-    <meta name="twitter:title" content="UAF CGPA Calculator For All Students">
-    <meta name="title" content="UAF CGPA Calculator For All Students">
+    <title>UAF CGPA Calculator 2025 - Online GPA to CGPA Tool | Live</title>
+    <meta property="og:title" content="UAF CGPA Calculator 2025 - Online GPA to CGPA Tool | Live">
+    <meta name="twitter:title" content="UAF CGPA Calculator 2025 - Online GPA to CGPA Tool | Live">
+    <meta name="title" content="UAF CGPA Calculator 2025 - Online GPA to CGPA Tool | Live">
+
+
 
     <link rel="canonical" href="https://ctool.fun/">
     <meta property="og:url" content="https://ctool.fun/">
     <meta name="twitter:url" content="https://ctool.fun/">
 
     <meta name="keywords"
-        content="UAF CGPA Calculator Tool C Tool- Calculate Your GPA Easily, UAF CGPA Calculator - Free Online Tool for GPA, UAF calcultor, CGPA Calculator, UAF CGPA Calculator, CGPA UAF Calculator, UAF CGPA Calculator tool, CGPA UAF Calculator Tool, CGPA UAF Calculator for all students">
+        content="uaf cgpa calculator live, uaf cgpa calculator 2025, uaf cgpa calculator online, uaf cgpa calculator uaf, result uaf cgpa calculator, uaf cgpa calculator download, uaf cgpa calculator app">
 
     <meta name="description"
-        content="Calculate your UAF CGPA easily using our fast, accurate and free GPA calculator tool designed for university students.">
+        content="Calculate your UAF CGPA live with our free UAF CGPA Calculator Online - updated for 2025. Easy, accurate & no login needed. Try it now!">
     <meta property="og:description"
-        content="Use this GPA calculator to calculate your UAF CGPA with ease. Supports all departments and grading systems.">
-    <meta name="twitter:description" content="Fast, simple & free CGPA calculator for students.">
+        content="Calculate your UAF CGPA live with our free UAF CGPA Calculator Online - updated for 2025. Easy, accurate & no login needed. Try it now!">
+    <meta name="twitter:description"
+        content="Calculate your UAF CGPA live with our free UAF CGPA Calculator Online - updated for 2025. Easy, accurate & no login needed. Try it now!">
 
-    <meta property="og:image" content="/src/cgpa-calculator-tool.png">
-    <meta name="twitter:image" content="/src/cgpa-calculator-tool.png">
+    <meta property="og:image" content="/src/uaf-cgpa-calculator-2025.png">
+    <meta name="twitter:image" content="/src/uaf-cgpa-calculator-2025.png">
 
-    <meta property="og:image" content="/src/uaf-calculator-tool-image.png">
-    <meta name="twitter:image" content="/src/uaf-calculator-tool-image.png">
+    <meta property="og:image" content="/src/uaf-cgpa-calculator-live.png">
+    <meta name="twitter:image" content="/src/uaf-cgpa-calculator-live.png">
 
-    <meta property="og:image" content="/src/uaf-cgpa-tool.webp">
-    <meta name="twitter:image" content="/src/uaf-cgpa-tool.webp">
-
+    <meta property="og:image" content="/src/uaf-cgpa-calculator-online.png">
+    <meta name="twitter:image" content="/src/uaf-cgpa-calculator-online.png">
 
 
 
 
 
     <style>
-        #subjects {
-            background-color: rgb(235, 234, 234);
-            padding: 20px;
-            border-radius: 8px;
+        .tool {
+            margin-top: 30px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-
+            gap: 20px;
         }
 
-        .input-group {
+        .input-section,
+        .result-section {
+            width: 100%;
+            padding: 30px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            gap: 20px;
+        }
+
+        .btn-section {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .subjects {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .input-fld {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             column-gap: 10px;
-            row-gap: 20px;
+            row-gap: 10px
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        input,
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            width: 100%;
+            height: 40px;
         }
 
         .remove-btn {
@@ -79,41 +115,108 @@
             font-weight: 500;
         }
 
-        .status {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            color: white;
+        .input-fld>:last-child {
+            justify-content: flex-end;
+        }
+
+        .result-box {
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .result-message {
+            font-size: 20px;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
-        .Excellent {
-            background: #28a745;
+        .result-cgpa {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
         }
 
-        .Good {
-            background: #17a2b8;
+        /* === Circular Progress === */
+        .progress-circle {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
         }
 
-        .Average {
-            background: #ffc107;
-            color: #000;
+        .progress-circle svg {
+            transform: rotate(-90deg);
+            width: 100%;
+            height: 100%;
         }
 
-        .Poor {
-            background: #dc3545;
+        .progress-bg,
+        .progress-value {
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
         }
 
+        .progress-bg {
+            stroke: #eee;
+        }
 
-        @media(max-width:650px) {
-            .input-group {
+        .progress-value {
+            stroke: #4caf50;
+            /* default, will change via JS */
+            stroke-dasharray: 440;
+            stroke-dashoffset: 440;
+            transition: stroke-dashoffset 1s ease;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .overview {
+            margin: 30px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .overview>.card {
+            width: min(320px, 100%);
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        /* === Animation === */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width:600px) {
+            .input-fld {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @media(max-width:420px) {
-            .input-group {
+        @media (max-width:375px) {
+            .input-fld {
                 grid-template-columns: repeat(1, 1fr);
             }
         }
@@ -122,385 +225,331 @@
 
     <script type="application/ld+json">
 		{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "UAF CGPA Calculate",
-  "image": [
-    "/src/cgpa-calculator-tool.png",
-    "/src/uaf-calculator-tool-image.png",
-    "/src/uaf-cgpa-tool.webp"
-    ],
-  "description": "Calculate your UAF CGPA easily using our fast, accurate and free GPA calculator tool designed for university students.",
-  "brand": {
-    "@type": "Brand",
-    "name": "UAF CGPA Calculator For All Students"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "120"
-  },
-  "offers": {
-    "@type": "AggregateOffer",
-    "offerCount": 100,
-    "lowPrice": 0,
-    "highPrice": 0,
-    "price": "0",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock",
-    "priceValidUntil": "2027-12-31"
-  }
-}
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": "UAF CGPA Calculator 2025 - Online GPA to CGPA Tool | Live",
+            "image": [
+                "/src/uaf-cgpa-calculator-2025.png",
+                "/src/uaf-cgpa-calculator-live.png",
+                "/src/uaf-cgpa-calculator-online.png"
+                ],
+            "description": "Calculate your UAF CGPA live with our free UAF CGPA Calculator Online - updated for 2025. Easy, accurate & no login needed. Try it now!",
+            "brand": {
+                "@type": "Brand",
+                "name": "C Tool"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "120"
+            },
+            "offers": {
+                "@type": "AggregateOffer",
+                "offerCount": 100,
+                "lowPrice": 0,
+                "highPrice": 0,
+                "price": "0",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "priceValidUntil": "2027-12-31"
+            }
+        }
 
 	</script>
 
 
     <script type="application/ld+json">
 		{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "UAF CGPA Calculator For All Students",
-  "url": "https://ctool.fun/",
-  "applicationCategory": "EduApplication",
-  "operatingSystem": "All",
-  "description": "A free online UAF CGPA calculator for all students in paksitan and  University of Agriculture, Faisalabad",
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "USD"
-  },
-  "creator": {
-    "@type": "Person",
-    "name": "Usama Saeed"
-  },
-  "browserRequirements": "Requires JavaScript and a modern web browser",
-  "screenshot": [
-  "/src/cgpa-calculator-tool.png",
-    "/src/uaf-calculator-tool-image.png",
-    "/src/uaf-cgpa-tool.webp"
-    ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "120"
-  }
-}
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "UAF CGPA Calculator 2025 - Online GPA to CGPA Tool | Live",
+            "url": "https://ctool.fun/",
+            "applicationCategory": "EduApplication",
+            "operatingSystem": "All",
+            "description": "Calculate your UAF CGPA live with our free UAF CGPA Calculator Online - updated for 2025. Easy, accurate & no login needed. Try it now!",
+            "offers": {
+                "@type": "Offer",
+                "price": "0.00",
+                "priceCurrency": "USD"
+            },
+            "creator": {
+                "@type": "Person",
+                "name": "Usama Saeed"
+            },
+            "browserRequirements": "Requires JavaScript and a modern web browser",
+            "screenshot": [
+            "/src/uaf-cgpa-calculator-2025.png",
+                "/src/uaf-cgpa-calculator-live.png",
+                "/src/uaf-cgpa-calculator-online.png"
+                ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "120"
+            }
+        }
 	</script>
-
-
-
-
 </head>
 
 <body>
 
+    <header>
+        <div class="box">
+            <a href="/" class="logo"><img src="/src/c-tool-website-logo.png" alt="c tool (calculator tool)"><strong>C
+                    tool</strong></a>
 
-
-    <!-- Header Section -->
-    <header class="container" id="header">
-        <div class="box header">
-            <a href="/" class="logo">
-                <img src="/src/c-tool-website-logo.png" alt="This Is The Tooliv Brand Logo" width="192" height="192">
-                <strong>C Tool</strong>
-            </a>
             <nav class="nav" id="navLink">
-                <img src="/src/close-icon.svg" alt="close menu" width="60" height="60" onclick='showMenu()'>
+                <img src="/src/close-icon.svg" alt="close menu icon" width="60" height="60" onclick='showMenu()'>
                 <a href="/">Home</a>
                 <a href="/about.html">About</a>
                 <a href="/#features">Features</a>
                 <a href="/#reviews">Reviews</a>
                 <a href="/contact.html">Contact</a>
             </nav>
-            <img src="/src/menu-icon.svg" alt="This is Menu Button" width="60" height="60" onclick='showMenu()'>
+            <img src="/src/menu-icon.svg" alt="open menu icon" width="60" height="60" onclick='showMenu()'>
+
         </div>
     </header>
 
 
 
-
-
+    <!-- Main Section -->
     <main>
+        <div class="divider">
+            <section class="card">
 
-        <!-- Tool Section -->
-        <div class="container" style="background-color: #F6F6F6; padding: 50px 30px;">
-            <div class="box" style="display: flex; flex-direction: column; gap: 50px; align-items: center;">
+                <h1>Try Now—Our UAF CGPA Calculator Tool for Free Online in 2025</h1>
+                <p>The best and most reliable UAF CGPA Calculator 2025—made specifically for students of the University
+                    of Agriculture Faisalabad. No sign-up or registration required.</p>
 
 
-                <section class="text-content" style="width: min(700px, 100%); text-align: center;">
-                    <h1>UAF CGPA Calculator</h1>
-                    <p>To calculate CGPA Accurately use our <strong>"UAF CGPA calculator."</strong> This tool is quick
-                        in response, mobile-friendly, and perfect for all students of UAF.</p>
 
-                </section>
 
-                <div class="divider" style="align-items: flex-start; justify-content: center;">
-                    <div class="input-section card"
-                        style="gap: 30px; background-color: white; border-radius: 10px; box-shadow:0px 0px 10px gainsboro; padding: 30px;">
-                        <h2>CGPA Calculator</h2>
+                <div class="tool">
+                    <div class="input-section card">
+                        <h2 class="clr">CGPA Calculator</h2>
 
-                        <div id="subjects">
+                        <div class="subjects">
 
-                            <div class="input-group">
-                                <input type="text" placeholder="Subject Name" id="Subject Name">
-                                <select id="Select Grade">
-                                    <option value="">Grade</option>
-                                    <option value="A+">A+</option>
-                                    <option value="A">A</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                                <input type="number" placeholder="Credit Hours" min="1" max="5" value="3"
-                                    id="Credit Hours">
-                                <button class="remove-btn" onclick="this.parentElement.remove()">X Delete</button>
+                            <div class="input-fld">
+                                <div class="input">
+                                    <label for="s-name">Subject Name </label>
+                                    <input type="text" placeholder="Subject Name" id="s-name">
+                                </div>
+
+                                <div class="input">
+                                    <label for="s-grade">Select Grade</label>
+                                    <select id="s-grade">
+                                        <option value="">Grade</option>
+                                        <option value="A+">A+</option>
+                                        <option value="A">A</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+
+                                <div class="input">
+                                    <label for="c-hours"> Credit Hours</label>
+                                    <input type="number" placeholder="Credit Hours" min="1" max="5" value="3"
+                                        id="c-hours">
+
+                                </div>
+
+                                <div class="input">
+                                    <button class="remove-btn" onclick="removeSubject(this)">X Delete</button>
+                                </div>
                             </div>
+
+
+
                         </div>
 
-                        <div class="buttons" style="display: flex; align-items: center;  gap: 20px; flex-wrap: wrap;">
 
+
+                        <div class="btn-section">
                             <button class="add-btn" onclick="addSubject()"
                                 style="background-color: #375bfa; color: white; font-weight: 500;">+ Add
                                 Subject</button>
                             <button class="calculate-btn" onclick="calculateCGPA()"
                                 style="background-color: #01757d; color: white; font-weight: 500;">Calculate
                                 CGPA</button>
-
-
                         </div>
-
                     </div>
 
+                    <div class="result-section card">
+                        <h2 class="clr">Result</h2>
+                    </div>
+                </div>
 
 
-                    <div class="output-section card"
-                        style="background-color: white; border-radius: 10px; box-shadow:0px 0px 10px gainsboro; padding: 30px;">
-                        <h3>Results</h3>
-                        <div class="card" id="resultCard">
-                            <img src="/src/chart-line-icon.svg" alt="chart-line-icon"
-                                style="width: 80px; align-self: center;" width="241" height="241">
-                            <p>Enter you data and click calculate to see your results!</p>
+
+
+                <br>
+                <p>Use this easy-to-access and simple UAF CGPA Calculator online to check and calculate your CGPA grades
+                    live, without any sign-up, login, or account creation needed. Whether you're on mobile or desktop,
+                    our UAF CGPA Calculator live tool is built to help students calculate quickly and accurately.</p>
+
+                <br>
+                <h2>Purpose of Making This Tool</h2>
+                <p>As a student of the University of Agriculture Faisalabad (UAF), I had a lot of difficulty in
+                    calculating my semester-wise CGPA manually.</p>
+                <p>I needed a reliable and efficient solution that would help me in accurately calculating my UAF CGPA.
+                    One day, my friend suggested that I should create a calculator app, so we decided to design and
+                    develop this helpful UAF CGPA Calculator UAF tool for all UAF students. Now, you can use it easily,
+                    freely, and conveniently without any cost.</p>
+
+
+                <br>
+                <h2 id="features">Why I Use This Tool</h2>
+                <p>There are many great and practical benefits of using this tool, which are given below in detail:</p>
+
+                <ul>
+                    <li>This tool is totally free of cost, and there is absolutely no sign-up or login required to use
+                        it in any way.</li>
+                    <li>This tool has been carefully designed for all students of UAF so that they can perform well and
+                        focus more on their academic studies.</li>
+                    <li>The interface of this UAF CGPA Calculator online tool is extremely simple, clean, and very easy
+                        to use, even for first-time users.</li>
+                    <li>It gives me live CGPA results instantly, and the result generated is always accurate and
+                        dependable.</li>
+                    <li>It is secure and mobile-friendly and can be easily accessed and used on every type of device,
+                        whether desktop or smartphone.</li>
+                    <li>In this calculator, you can dynamically add and remove multiple subjects as needed with ease.
+                    </li>
+                </ul>
+
+
+                <br>
+                <h2>How It Works</h2>
+                <p>This UAF CGPA Calculator live tool has been designed and structured in such a way that any user can
+                    understand and use it very easily. The process has been explained in three very simple and clear
+                    steps:</p>
+
+                <ol>
+                    <li>First of all, you have to add the data of each subject one by one.</li>
+                    <li>If you want to add or remove an important subject, then you can do it easily just by clicking on
+                        the corresponding button.</li>
+                    <li>You can instantly see the result by clicking on the "Calculate CGPA" button at the bottom of the
+                        form.</li>
+                </ol>
+
+                <br>
+                <h2>How to Use This Tool</h2>
+                <p>You can use this tool easily and effectively by following these straightforward steps:</p>
+                <ol>
+                    <li>Enter the name of the subject (this step is optional)</li>
+                    <li>Select the appropriate grade of the subject from the drop-down menu.</li>
+                    <li>Then add the credit hours for that subject accurately.</li>
+                    <li>If you want to add a more important subject, then simply click on the "Add Subject" button.</li>
+                    <li>If you want to remove any subject from the list, then just click on the "Remove Subject" button.
+                    </li>
+                    <li>After entering the data of all the subjects properly, click on the "Calculate CGPA" button and
+                        see your final CGPA result instantly using this smart and accurate UAF CGPA Calculator.</li>
+                </ol>
+
+
+                <br>
+                <h2>Who Can Use This Tool</h2>
+                <p>This CGPA calculator tool can be used by all students of UAF, from any department or faculty, as well
+                    as by professors and academic staff. I personally recommend and prefer that all students use this
+                    UAF CGPA Calculator 2025 so that they do not have to face any unnecessary difficulty or confusion
+                    while calculating their CGPA manually.</p>
+
+
+                <br>
+                <h2 id="reviews">User Testimonials</h2>
+                <p>Now let’s hear from the students and professors who have actually used this UAF CGPA Calculator live
+                    tool and shared their experience with us:</p>
+
+
+
+
+                <div class=" overview">
+                    <div class="card">
+                        <div class="developer">
+                            <div class="img"><img src="/src/author-icon.svg" alt="How is the developer"></div>
+                            <div class="bio">
+                                <h3 class="clr">Ali S</h3>
+                                <span>Student</span>
+                            </div>
                         </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
-
-
-
-
-        <!-- Let's How CGPA Works -->
-        <div class="container" style="padding: 50px 30px;">
-            <div class="box " style="display: flex; flex-direction: column; gap: 50px; align-items: center;">
-
-                <section class="text-content" style="width: min(800px, 100%); text-align: center;">
-                    <h2>How to Use the UAF CGPA Calculator</h2>
-                    <p>Use this CGPA calculating tool in 3 easy steps. Let me guide you.</p>
-                </section>
-
-                <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center;">
-
-                    <div class="card"
-                        style="width: min(250px, 100%); display: flex; align-items: center; background-color: #F6F6F6; border-radius: 20px; ">
-                        <strong
-                            style="width: 40px; height: 40px; background-color: #01757d; border-radius: 50px; display: flex; align-items: center; justify-content: center; color: white; font-size: 25px;">1</strong>
-                        <h3 style="color: #01757d;">Input Values</h3>
-                        <p>Enter The Subject Name And Slect Grade of that Subject</p>
+                        <blockquote>I had to calculate my CGPA manually every single time. But this tool has really made
+                            my life easier. I absolutely love this online UAF CGPA Calculator Tool!</blockquote>
                     </div>
 
-                    <div class="card"
-                        style="width: min(250px, 100%); display: flex; align-items: center; background-color: #F6F6F6; border-radius: 20px;">
-                        <strong
-                            style="width: 40px; height: 40px; background-color: #01757d; border-radius: 50px; display: flex; align-items: center; justify-content: center; color: white; font-size: 25px;">2</strong>
-                        <h3 style="color: #01757d;">Add | Remove</h3>
-                        <p>Add or Remove Subject According To Your Need</p>
+                    <div class="card">
+                        <div class="developer">
+                            <div class="img"><img src="/src/author-icon.svg" alt="How is the developer"></div>
+                            <div class="bio">
+                                <h3 class="clr">Asgar K</h3>
+                                <span>Student</span>
+                            </div>
+                        </div>
+                        <blockquote>I am very impressed with the simple, clean, and easy use of this calculator tool. I
+                            highly recommend all of my UAF friends to definitely use this amazing tool.</blockquote>
                     </div>
 
-                    <div class="card"
-                        style="width: min(250px, 100%); display: flex; align-items: center; background-color: #F6F6F6; border-radius: 20px;">
-                        <strong
-                            style="width: 40px; height: 40px; background-color: #01757d; border-radius: 50px; display: flex; align-items: center; justify-content: center; color: white; font-size: 25px;">3</strong>
-                        <h3 style="color: #01757d;">Result</h3>
-                        <p>Click on "Calculate CGPA." And check your CGPA Result. </p>
-                    </div>
-
-                </div>
-
-                <section class="text-content" style="width: min(800px, 100%);">
-                    <h2>Step By Step Guide To Use This Tool</h2>
-                    <ol>
-                        <li>Enter your subject name (it's optional).</li>
-                        <li>Select your grade from the grades list menu.</li>
-                        <li>Enter the credit hours of that subject.</li>
-                        <li>Click on the "Add Subject" button and add unlimited subjects as you need.</li>
-                        <li>After inputting all details, click on "Calculate CGPA."</li>
-                        <li>In the Result Section, you can check your CGPA and performance status.</li>
-                        <li>If you want to remove any subject, you can remove it by clicking on the Remove button.</li>
-                    </ol>
-
-                    <br>
-                    <h2>Understanding Your CGPA Result</h2>
-                    <p>When you click on the "Calculate CGPA" button, then your result will be displayed in the large
-                        number form. Along with this, you can also get a performance label. </p>
-                    <strong>Excellent, Good, Average, or Poor</strong>
-                    <p>The label provides a motivational message along with your status, which can assist you in
-                        enhancing your academic performance.</p>
-
-
-                </section>
-
-
-
-
-            </div>
-        </div>
-
-
-
-
-
-
-        <!-- Banifets and Features Section -->
-        <div class="container" id="features" style="background-color: #F6F6F6; padding: 50px 30px;">
-            <div class="box" style="display: flex; flex-direction: column; gap: 50px; align-items: center;">
-
-                <section class="text-content" style="width: min(800px, 100%); text-align: center;">
-                    <h2>Banifets &<span class="clr"> Features</span></h2>
-                    <p>This Tool is Designed
-                        specifically for Pakistani students pursuing higher education along with multiple Features.</p>
-                </section>
-
-                <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center;">
-
-                    <div class="card"
-                        style="width: min(250px, 100%); display: flex; align-items: center; background-color: white; border-radius: 20px;">
-                        <img src="/src/check-icon.svg" alt="Accurate Result Icon" width="50" height="50"
-                            style="width: 50px; height: 50px;">
-                        <h3>Accurate Result</h3>
-                        <p>This tool guarantees 100% accurate results. So don't worry about its result.
-                        </p>
-                    </div>
-
-                    <div class="card"
-                        style="width: min(250px, 100%); display: flex; align-items: center; background-color: white; border-radius: 20px;">
-                        <img src="/src/mobile-icon.svg" alt="Mobile Friendly Icon" width="50" height="50"
-                            style="width: 50px; height: 50px;">
-                        <h3>Mobile Friendly</h3>
-                        <p>This tool is designed to be mobile-friendly and compatible with all devices.</p>
-                    </div>
-
-                    <div class="card"
-                        style="width: min(250px, 100%); display: flex; align-items: center; background-color: white; border-radius: 20px;">
-                        <img src="/src/secure-icon.svg" alt="Privacy Secure Icon" width="50" height="50"
-                            style="width: 50px; height: 50px;">
-                        <h3>Secure & Private</h3>
-                        <p>Using this tool ensures complete safety, security, and privacy.</p>
-                    </div>
-
-                </div>
-
-                <section class="text-content " style="width: min(800px, 100%);">
-                    <h2>Why Use This CGPA Calculator?</h2>
-                    <ul>
-                        <li>This tool's CGPA calculation is accurate and works on the basis of standard grade points.
-                        </li>
-                        <li>This can be used anytime, anywhere. It is super lightweight and can work on mobile devices
-                            and other devices.</li>
-                        <li>This tool supports custom subjects and credit hours.</li>
-                        <li>It is 100% free of cost, and there is no need to log in or sign up.</li>
-                        <li>You can dynamically add or remove an unlimited number of subjects.</li>
-                    </ul>
-
-                    <br>
-                    <h2>Who Can Use This Tool?</h2>
-                    <ul>
-                        <li>UAF Students from any department</li>
-                        <li>Engineering, Medical, Arts, or Business students</li>
-                        <li>Final year students calculating cumulative GPA</li>
-                        <li>Teachers verifying CGPA reports And Others</li>
-                    </ul>
-                </section>
-
-            </div>
-        </div>
-
-
-
-        <!-- What Says Our Users -->
-        <div class="container" id="reviews" style="background-color: white; padding: 50px 30px;">
-            <div class="box" style="display: flex; flex-direction: column; gap: 50px; align-items: center;">
-
-                <section class="text-content" style="width: min(800px, 100%); text-align: center;">
-                    <h2>What <span class="clr">Students Say</span></h2>
-                    <p>Students love our calculators for accuracy, speed, simplicity, and the confidence they gain in
-                        academics.</p>
-                </section>
-
-                <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center;">
-
-                    <div class="card"
-                        style="width: min(250px, 100%); display: flex; align-items: center; background-color: #F6F6F6; border-radius: 20px;">
-                        <img src="/src/user-graduate-icon.svg" alt="User Icon" width="50" height="50"
-                            style="width: 50px; height: 50px;">
-                        <h3>Hammad A.</h3>
-                        <blockquote>"Best CGPA calculator I've used — fast and super accurate! It is A Great Calculator
-                            for all Students"</blockquote>
-                    </div>
-
-                    <div class="card"
-                        style="width: min(250px, 100%); display: flex; align-items: center; background-color: #F6F6F6; border-radius: 20px;">
-                        <img src="/src/user-graduate-icon.svg" alt="User Icon" width="50" height="50"
-                            style="width: 50px; height: 50px;">
-                        <h3>Fatima K.</h3>
-                        <blockquote>"Really helped me understand how my grades impact overall CGPA. I love This Tool"
+                    <div class="card">
+                        <div class="developer">
+                            <div class="img"><img src="/src/author-icon.svg" alt="How is the developer"></div>
+                            <div class="bio">
+                                <h3 class="clr">Anas U</h3>
+                                <span>professor</span>
+                            </div>
+                        </div>
+                        <blockquote>As a professor at UAF, I have personally used this tool, and I really like its
+                            accuracy and simplicity. I strongly recommend this CGPA tool to all of my students.
                         </blockquote>
                     </div>
-
-                    <div class="card"
-                        style="width: min(250px, 100%); display: flex; align-items: center; background-color: #F6F6F6; border-radius: 20px;">
-                        <img src="/src/user-graduate-icon.svg" alt="User Icon" width="50" height="50"
-                            style="width: 50px; height: 50px;">
-                        <h3>Ismail S.</h3>
-                        <blockquote>"This calculator helped me track my CGPA throughout my pre-med studies. Got into my
-                            dream medical college!"</blockquote>
-                    </div>
-
                 </div>
 
-                <section class="text-content " style="width: min(800px, 100%);">
-                    <h2>People Also Ask</h2>
 
-                </section>
 
-            </div>
+
+            </section>
+
+            <aside>
+                <div class="card">
+                    <div class="developer">
+                        <div class="img"><img src="/src/author-icon.svg" alt="How is the developer"></div>
+                        <div class="bio">
+                            <h3 class="clr">USAMA SAEED</h3>
+                            <span>Developer</span>
+                        </div>
+                    </div>
+                    <p>As an experienced developer and author, I realize how I can help our users achieve their goals
+                        with accurate results.</p>
+                </div>
+
+
+
+                <div class="card">
+                    <h3 class="clr">Tags</h3>
+                    <div class="tags">
+                        <span>UAF CGPA Calculator</span>
+                        <span>uaf cgpa calculator live</span>
+                        <span>uaf cgpa calculator 2025</span>
+                        <span>uaf cgpa calculator online</span>
+                    </div>
+                </div>
+            </aside>
         </div>
-
     </main>
 
 
-
-
-
-
-
-
-    <footer class="container">
-
+    <footer>
         <div class="box grid">
-
             <div class="card">
-                <h3>C Tool</h3>
-                <p>Professional educational calculators designed for Pakistani students pursuing higher education.</p>
+                <h3>Calculator Tool - C Tool</h3>
+                <p>We develop tools focused on providing accurate results and helping users achieve their goals.</p>
             </div>
 
             <div class="card">
-                <h3>Tools</h3>
+                <h3>Our Tools</h3>
                 <div class="links">
                     <a href="/">CGPA Calculator</a>
                     <a href="/#features">Features</a>
@@ -508,10 +557,8 @@
                 </div>
             </div>
 
-
-
             <div class="card">
-                <h3>Site Links</h3>
+                <h3>Website Links</h3>
                 <div class="links">
                     <a href="/">Home</a>
                     <a href="/about.html">About</a>
@@ -520,7 +567,7 @@
             </div>
 
             <div class="card">
-                <h3>Legal Pages</h3>
+                <h3>Other Pages</h3>
                 <div class="links">
                     <a href="/privacy-policy.html">Privacy Policy</a>
                     <a href="/terms-and-conditions.html">Terms and Conditions</a>
@@ -528,14 +575,12 @@
                 </div>
             </div>
 
-
-
         </div>
-
-        <div class="box bottom">
-            <p>&copy; 2025 C Tool. All rights reserved. Designed for students with ❤️</p>
+        <div class="box btm">
+            <p>© 2025 C Tool. All rights reserved | Designed for better results and achievements.</p>
         </div>
     </footer>
+
 
 
 
@@ -546,9 +591,7 @@
             navLinks.classList.toggle("show")
         }
 
-
-        // CGPA Calculator Tool Codding 
-
+        // Grade to Grade Point Mapping
         const gradePoints = {
             "A+": 4.0,
             "A": 3.7,
@@ -560,69 +603,126 @@
             "F": 0.0
         };
 
+        // Add Subject Field Function
         function addSubject() {
-            const div = document.createElement("div");
-            div.className = "input-group";
-            div.innerHTML = `
-        <input type="text" placeholder="Subject Name" />
-        <select>
-          <option value="">Grade</option>
-          ${Object.keys(gradePoints).map(g => `<option value="${g}">${g}</option>`).join('')}
-        </select>
-        <input type="number" placeholder="Credit Hours" min="1" max="5" value="3" />
-        <button class="remove-btn" onclick="this.parentElement.remove()">X Delete</button>
-      `;
-            document.getElementById("subjects").appendChild(div);
+            const subjectsContainer = document.querySelector(".subjects");
+
+            const inputFld = document.createElement("div");
+            inputFld.className = "input-fld";
+            inputFld.innerHTML = `
+            <div class="input">
+                <label for="s-name">Subject Name </label>
+                <input type="text" placeholder="Subject Name" id="s-name">
+            </div>
+
+            <div class="input">
+                <label for="s-grade">Select Grade</label>
+                <select id="s-grade">
+                    <option value="">Grade</option>
+                    <option value="A+">A+</option>
+                    <option value="A">A</option>
+                    <option value="B+">B+</option>
+                    <option value="B">B</option>
+                    <option value="C+">C+</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="F">F</option>
+                </select>
+
+            </div>
+
+            <div class="input">
+                <label for="c-hours"> Credit Hours</label>
+                <input type="number" placeholder="Credit Hours" min="1" max="5" value="3" id="c-hours">
+            </div>
+
+            <div class="input">
+                <button class="remove-btn" onclick="this.parentElement.parentElement.remove()">X Delete</button>
+            </div>
+        `;
+
+            subjectsContainer.appendChild(inputFld);
         }
 
+        // Calculate CGPA Function
         function calculateCGPA() {
-            const subjects = document.querySelectorAll("#subjects .input-group");
+            const allFields = document.querySelectorAll(".input-fld");
             let totalPoints = 0;
             let totalCredits = 0;
 
-            subjects.forEach(group => {
-                const grade = group.querySelector("select").value;
-                const credits = parseFloat(group.querySelectorAll("input")[1].value);
+            allFields.forEach(field => {
+                const grade = field.querySelector("select").value;
+                const credit = parseFloat(field.querySelector('input[type="number"]').value);
 
-                if (grade && credits > 0) {
-                    totalPoints += gradePoints[grade] * credits;
-                    totalCredits += credits;
+                if (grade && !isNaN(credit)) {
+                    const point = gradePoints[grade];
+                    totalPoints += point * credit;
+                    totalCredits += credit;
                 }
             });
 
-            const resultCard = document.getElementById("resultCard");
+            const resultSection = document.querySelector(".result-section");
+            resultSection.innerHTML = `<h2 class="clr">Result</h2>`; // Reset
+
             if (totalCredits === 0) {
-                resultCard.innerHTML = `<p>Please enter valid data.</p>`;
+                resultSection.innerHTML += `<p style="color:red;">Please enter valid grades and credit hours.</p>`;
                 return;
             }
 
             const cgpa = (totalPoints / totalCredits).toFixed(2);
-            let status = '';
-            if (cgpa >= 3.7) status = 'Excellent';
-            else if (cgpa >= 3.0) status = 'Good';
-            else if (cgpa >= 2.0) status = 'Average';
-            else status = 'Poor';
+            const cgpaValue = parseFloat(cgpa);
 
-            resultCard.innerHTML = `
-        <h3>CGPA</h3>
-        <h1>${cgpa}</h1>
-        <div class="status ${status}">${status}</div>
-        <p>${statusMessage(status)}</p>
-      `;
+            let message = "", emoji = "", color = "";
+
+            if (cgpaValue >= 3.7) {
+                message = "🎉 Excellent!";
+                color = "#4caf50";
+            } else if (cgpaValue >= 3.0) {
+                message = "👍 Good job!";
+                color = "#2196f3";
+            } else if (cgpaValue >= 2.0) {
+                message = "🙂 Keep going!";
+                color = "#ff9800";
+            } else {
+                message = "⚠️ Needs Improvement!";
+                color = "#f44336";
+            }
+
+            const percentage = (cgpaValue / 4) * 100;
+            const dashOffset = 440 - (440 * (percentage / 100));
+
+            resultSection.innerHTML += `
+        <div class="result-box">
+            <div class="result-message" style="color:${color};">${emoji} ${message}</div>
+            <div class="result-cgpa">Your CGPA is <span id="cgpa-number">${cgpa}</span></div>
+
+            <div class="progress-circle">
+                <svg>
+                    <circle class="progress-bg" cx="75" cy="75" r="70" />
+                    <circle class="progress-value" id="progressValue" cx="75" cy="75" r="70" />
+                </svg>
+                <div class="progress-text" style="color:${color};">${cgpa}</div>
+            </div>
+        </div>
+    `;
+
+            // Animate stroke-dashoffset (progress fill)
+            const circle = document.getElementById("progressValue");
+            circle.style.stroke = color;
+            circle.style.strokeDashoffset = dashOffset;
         }
 
-        function statusMessage(status) {
-            switch (status) {
-                case 'Excellent': return 'Keep up the great work! 🎉';
-                case 'Good': return 'You are doing good, keep going! 👍';
-                case 'Average': return 'You can improve! 💪';
-                case 'Poor': return 'Don’t give up, work harder! 🙏';
+
+        function removeSubject(btn) {
+            const inputBlock = btn.closest(".input-fld");
+            if (inputBlock) {
+                inputBlock.remove();
             }
         }
 
-        // Add first subject by default
 
     </script>
+
 </body>
 
 </html>
