@@ -46,8 +46,18 @@
     <loc>https://ctool.fun/posts/how-to-calculate-cgpa.html</loc>
     <lastmod>2025-08-7</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.1</priority>
   </url>
 
+  <url>
+    <loc>https://ctool.fun/tools/uog-gpa-calculator.html</loc>
+    <lastmod>2025-08-7</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.1</priority>
+  </url>
+
+
+
 </urlset>
+
 
