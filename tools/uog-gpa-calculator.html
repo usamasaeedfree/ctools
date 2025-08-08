@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="revisit-after" content="7 day">
+    <meta name="language" content="en">
+    <meta name="author" content="USAMA">
+    <meta name="publisher" content="C Tool">
+    <meta name="googlebot" content="translate">
+    <meta name="rating" content="general">
+    <meta property="og:type" content="website">
+    <meta name="twitter:creator" content="@mycreatorhandle">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@myawesomewebsite">
+    <meta property="og:site_name" content="C Tool">
+    <meta property="og:type" content="website">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" type="image/x-icon" href="/src/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+
+
+    <title>UOG GPA Calculator - Accurate, Easy & Free!</title>
+    <meta property="og:title" content="UOG GPA Calculator - Accurate, Easy & Free!">
+    <meta name="twitter:title" content="UOG GPA Calculator - Accurate, Easy & Free!">
+    <meta name="title" content="UOG GPA Calculator - Accurate, Easy & Free!">
+
+
+
+    <link rel="canonical" href="https://ctool.fun/tools/uog-gpa-calculator.html">
+    <meta property="og:url" content="https://ctool.fun/tools/uog-gpa-calculator.html">
+    <meta name="twitter:url" content="https://ctool.fun/tools/uog-gpa-calculator.html">
+
+    <meta name="keywords"
+        content="uaf cgpa calculator live, uaf cgpa calculator 2025, uaf cgpa calculator online, uaf cgpa calculator uaf, result uaf cgpa calculator, uaf cgpa calculator download, uaf cgpa calculator app">
+
+    <meta name="description"
+        content="Calculate Your UOG GPA Easily - Free GPA Calculator for University of Gujrat Students">
+    <meta property="og:description"
+        content="Calculate Your UOG GPA Easily - Free GPA Calculator for University of Gujrat Students">
+    <meta name="twitter:description"
+        content="Calculate Your UOG GPA Easily - Free GPA Calculator for University of Gujrat Students">
+
+    <meta property="og:image" content="/src/uaf-cgpa-calculator-2025.png">
+    <meta name="twitter:image" content="/src/uaf-cgpa-calculator-2025.png">
+
+    <meta property="og:image" content="/src/uaf-cgpa-calculator-live.png">
+    <meta name="twitter:image" content="/src/uaf-cgpa-calculator-live.png">
+
+    <meta property="og:image" content="/src/uaf-cgpa-calculator-online.png">
+    <meta name="twitter:image" content="/src/uaf-cgpa-calculator-online.png">
+
+
+
+
+
+    <style>
+        .tool {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-section,
+        .result-section {
+            width: 100%;
+            padding: 30px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            gap: 20px;
+        }
+
+        .btn-section {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .subjects {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .input-fld {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 10px;
+            row-gap: 10px
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        input,
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            width: 100%;
+            height: 40px;
+        }
+
+        .remove-btn {
+            background: #dc3545;
+            color: white;
+            font-weight: 500;
+        }
+
+        .input-fld>:last-child {
+            justify-content: flex-end;
+        }
+
+        .result-box {
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .result-message {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .result-cgpa {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* === Circular Progress === */
+        .progress-circle {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+        }
+
+        .progress-circle svg {
+            transform: rotate(-90deg);
+            width: 100%;
+            height: 100%;
+        }
+
+        .progress-bg,
+        .progress-value {
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
+        }
+
+        .progress-bg {
+            stroke: #eee;
+        }
+
+        .progress-value {
+            stroke: #4caf50;
+            /* default, will change via JS */
+            stroke-dasharray: 440;
+            stroke-dashoffset: 440;
+            transition: stroke-dashoffset 1s ease;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .overview {
+            margin: 30px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .overview>.card {
+            width: min(320px, 100%);
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        /* === Animation === */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width:600px) {
+            .input-fld {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width:375px) {
+            .input-fld {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+
+
+    <script type="application/ld+json">
+		{
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": "UOG GPA Calculator - Accurate, Easy & Free!",
+            "image": [
+                "/src/uaf-cgpa-calculator-2025.png",
+                "/src/uaf-cgpa-calculator-live.png",
+                "/src/uaf-cgpa-calculator-online.png"
+                ],
+            "description": "Calculate Your UOG GPA Easily - Free GPA Calculator for University of Gujrat Students",
+            "brand": {
+                "@type": "Brand",
+                "name": "C Tool"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "120"
+            },
+            "offers": {
+                "@type": "AggregateOffer",
+                "offerCount": 100,
+                "lowPrice": 0,
+                "highPrice": 0,
+                "price": "0",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "priceValidUntil": "2027-12-31"
+            }
+        }
+
+	</script>
+
+
+    <script type="application/ld+json">
+		{
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "UOG GPA Calculator - Accurate, Easy & Free!",
+            "url": "https://ctool.fun/",
+            "applicationCategory": "EduApplication",
+            "operatingSystem": "All",
+            "description": "Calculate Your UOG GPA Easily - Free GPA Calculator for University of Gujrat Students",
+            "offers": {
+                "@type": "Offer",
+                "price": "0.00",
+                "priceCurrency": "USD"
+            },
+            "creator": {
+                "@type": "Person",
+                "name": "Usama Saeed"
+            },
+            "browserRequirements": "Requires JavaScript and a modern web browser",
+            "screenshot": [
+            "/src/uaf-cgpa-calculator-2025.png",
+                "/src/uaf-cgpa-calculator-live.png",
+                "/src/uaf-cgpa-calculator-online.png"
+                ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "120"
+            }
+        }
+	</script>
+
+
+
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="box">
+            <a href="/" class="logo"><img src="/src/c-tool-website-logo.png" alt="c tool (calculator tool)"><strong>C
+                    tool</strong></a>
+
+            <nav class="nav" id="navLink">
+                <img src="/src/close-icon.svg" alt="close menu icon" width="60" height="60" onclick='showMenu()'>
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/#features">Features</a>
+                <a href="/#reviews">Reviews</a>
+                <a href="/contact.html">Contact</a>
+            </nav>
+            <img src="/src/menu-icon.svg" alt="open menu icon" width="60" height="60" onclick='showMenu()'>
+
+        </div>
+    </header>
+
+
+
+    <!-- Main Section -->
+    <main>
+        <div class="divider">
+            <section class="card">
+
+                <h1>Use my UOG GPA Calculator for Free and Get instently Result</h1>
+                <p>Calculate Your UOG GPA Easily  Free GPA Calculator for University of Gujrat Students</p>
+
+
+                <div class="tool">
+                    <div class="input-section card">
+                        <h2 class="clr">UOG GPA Calculator</h2>
+
+                        <div class="subjects">
+
+                            <div class="input-fld">
+                                <div class="input">
+                                    <label for="s-name">Subject Name</label>
+                                    <input type="text" placeholder="Subject Name" id="s-name">
+                                </div>
+
+                                <div class="input">
+                                    <label for="s-grade">Select Grade</label>
+                                    <select id="s-grade">
+                                        <option value="">Grade</option>
+                                        <option value="A+">A+</option>
+                                        <option value="A">A</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+
+                                <div class="input">
+                                    <label for="c-hours">Credit Hours</label>
+                                    <input type="number" placeholder="Credit Hours" min="1" max="5" value="3"
+                                        id="c-hours">
+                                </div>
+
+                                <div class="input">
+                                    <button class="remove-btn" onclick="removeSubject(this)">X Delete</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="btn-section">
+                            <button class="add-btn" onclick="addSubject()"
+                                style="background-color: #375bfa; color: white; font-weight: 500;">+ Add
+                                Subject</button>
+                            <button class="calculate-btn" onclick="CalculateGPA()"
+                                style="background-color: #01757d; color: white; font-weight: 500;">Calculate
+                                GPA</button>
+                        </div>
+                    </div>
+
+                    <div class="result-section card">
+                        <h2 class="clr">Result</h2>
+                    </div>
+                </div>
+
+
+
+
+            </section>
+
+            <aside>
+                <div class="card">
+                    <div class="developer">
+                        <div class="img"><img src="/src/author-icon.svg" alt="How is the developer"></div>
+                        <div class="bio">
+                            <h3 class="clr">USAMA SAEED</h3>
+                            <span>Developer</span>
+                        </div>
+                    </div>
+                    <p>As an experienced developer and author, I realize how I can help our users achieve their goals
+                        with accurate results.</p>
+                </div>
+
+
+
+                <div class="card">
+                    <h3 class="clr">Tags</h3>
+                    <div class="tags">
+                        <span>UAF CGPA Calculator</span>
+                        <span>uaf cgpa calculator live</span>
+                        <span>uaf cgpa calculator 2025</span>
+                        <span>uaf cgpa calculator online</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="box grid">
+            <div class="card">
+                <h3>Calculator Tool - C Tool</h3>
+                <p>We develop tools focused on providing accurate results and helping users achieve their goals.</p>
+            </div>
+
+            <div class="card">
+                <h3>Our Tools</h3>
+                <div class="links">
+                    <a href="/">CGPA Calculator</a>
+                    <a href="/tools/uog-gpa-calculator.html">UOG GPA Calculator</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Website Links</h3>
+                <div class="links">
+                    <a href="/">Home</a>
+                    <a href="/about.html">About</a>
+                    <a href="/contact.html">Contact</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Other Pages</h3>
+                <div class="links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms-and-conditions.html">Terms and Conditions</a>
+                    <a href="/disclaimer.html">Disclaimer</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="box btm">
+            <p>© 2025 C Tool. All rights reserved | Designed for better results and achievements.</p>
+        </div>
+    </footer>
+
+
+
+
+
+    <script>
+        function showMenu() {
+            const navLinks = document.getElementById("navLink");
+            navLinks.classList.toggle("show")
+        }
+
+
+        // Grade to Grade Point Mapping
+        const gradePoints = {
+            "A+": 4.0,
+            "A": 3.7,
+            "B+": 3.3,
+            "B": 3.0,
+            "C+": 2.7,
+            "C": 2.3,
+            "D": 2.0,
+            "F": 0.0
+        };
+
+        function removeSubject(btn) {
+            const inputBlock = btn.closest(".input-fld");
+            if (inputBlock) {
+                inputBlock.remove();
+            }
+        }
+
+        function addSubject() {
+            const subjectsContainer = document.querySelector(".subjects");
+
+            const inputFld = document.createElement("div");
+            inputFld.className = "input-fld";
+            inputFld.innerHTML = `
+            <div class="input">
+                <label for="s-name">Subject Name </label>
+                <input type="text" placeholder="Subject Name" id="s-name">
+            </div>
+
+            <div class="input">
+                <label for="s-grade">Select Grade</label>
+                <select id="s-grade">
+                    <option value="">Grade</option>
+                    <option value="A+">A+</option>
+                    <option value="A">A</option>
+                    <option value="B+">B+</option>
+                    <option value="B">B</option>
+                    <option value="C+">C+</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="F">F</option>
+                </select>
+
+            </div>
+
+            <div class="input">
+                <label for="c-hours"> Credit Hours</label>
+                <input type="number" placeholder="Credit Hours" min="1" max="5" value="3" id="c-hours">
+            </div>
+
+            <div class="input">
+                <button class="remove-btn" onclick="this.parentElement.parentElement.remove()">X Delete</button>
+            </div>
+        `;
+
+            subjectsContainer.appendChild(inputFld);
+        }
+
+
+        function CalculateGPA() {
+            let totalPoints = 0;
+            let totalCredits = 0;
+
+            // let sname = document.querySelectorAll("#s-name")
+            let sgrade = document.querySelectorAll("#s-grade")
+            let chours = document.querySelectorAll("#c-hours")
+
+            for (let i = 0; i < sgrade.length; i++) {
+
+                if (!isNaN(gradePoints[sgrade[i].value]) && !isNaN(parseFloat(chours[i].value))) {
+                    totalPoints += gradePoints[sgrade[i].value] * parseFloat(chours[i].value);
+                    totalCredits += parseFloat(chours[i].value);
+                }
+            }
+
+            let GPA = totalPoints / totalCredits;
+
+            const resultSection = document.querySelector(".result-section");
+            resultSection.innerHTML = `<h2 class="clr">Result</h2>`; // Reset
+
+
+            let message = "", emoji = "", color = "";
+
+            if (GPA.toFixed(2) >= 3.7) {
+                message = "🎉 Excellent!";
+                color = "#4caf50";
+            } else if (GPA.toFixed(2) >= 3.0) {
+                message = "👍 Good job!";
+                color = "#2196f3";
+            } else if (GPA.toFixed(2) >= 2.0) {
+                message = "🙂 Keep going!";
+                color = "#ff9800";
+            } else {
+                message = "⚠️ Needs Improvement!";
+                color = "#f44336";
+            }
+
+            const percentage = (GPA.toFixed(2) / 4) * 100;
+            const dashOffset = 440 - (440 * (percentage / 100));
+
+            resultSection.innerHTML += `
+        <div class="result-box">
+            <div class="result-message" style="color:${color};">${emoji} ${message}</div>
+            <div class="result-cgpa">Your GPA is <span id="gpa-number">${GPA.toFixed(2)}</span></div>
+
+            <div class="progress-circle">
+                <svg>
+                    <circle class="progress-bg" cx="75" cy="75" r="60" />
+                    <circle class="progress-value" id="progressValue" cx="75" cy="75" r="60" />
+                </svg>
+                <div class="progress-text" style="color:${color};">${GPA.toFixed(2)}</div>
+            </div>
+        </div>
+    `;
+
+            const circle = document.getElementById("progressValue");
+            circle.style.stroke = color;
+            circle.style.strokeDashoffset = dashOffset;
+
+        }
+
+
+    </script>
+
+
+    
+
+
+</body>
+
+</html>
