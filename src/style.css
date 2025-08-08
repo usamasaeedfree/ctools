@@ -52,7 +52,23 @@ ul, ol{
     padding-left: 50px;
 }
 
-
+caption, figcaption{
+    padding: 10px 0px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th,
+td {
+    border: 1px solid gainsboro;
+    text-align: left;
+    padding: 10px;
+}
+th,
+tr:nth-child(even) {
+    background-color: #eee;
+}
 
 
 
